@@ -5,9 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <!-- Logo, nav toggle, and navigation at top of page -->
@@ -32,7 +38,7 @@
     <section class="intro" id="home">
         <h1 class="sectionTitle sectionTitleIntro">Hi, I am <strong>Sinu Cletus</strong></h1>
         <p class="sectionSubtitle sectionSubtitleIntro">Front End Dev</p>
-        <img src="#" alt="my face">
+        <img src="images/me.jpg" alt="my face">
     </section>
 
     <!-- My Services -->
@@ -70,20 +76,28 @@
                 <span><a href="#"><img src="" alt="PDF"></a></span>
             </article>
         </div> 
-    </section> <!-- End of Services/About Me -->
+    </section> <!-- End of My Services/About Me -->
 
     <!-- Projects -->
     <section class="projects" id="projects">
-        <h2>Projects</h2>
+        <h2 class="sectionTitle">Projects</h2>
         <p>Selections of My Work</p>
         <div class="projectsContainer">
             <div class="project">
-
+                <a href="#"><img src="images/writing.jpg" alt="Writer's Portfolio" class="projectImg"></a>
+                <a href="#">View Code</a>
             </div>
             <div class="project">
-                
+                <a href="#"><img src="images/food.jpg" alt="Restaurant Website" class="projectImg"></a>
+                <a href="#">View Code</a>
             </div>
         </div>
-    </section>
+    </section> <!-- End of Projects -->
+
+    <!-- Contact/Footer -->
+    <footer class="contact" id="contact">
+        <h2 class="sectionTitle">Contact Me</h2>
+        <a href="mailto:sinucletus45@gmail.com" class="footerLink">sinucletus45@gmail.com</a>
+    </footer>
 </body>
 </html>
