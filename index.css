@@ -27,6 +27,10 @@
     --clr-light: #fff;
     --clr-dark: #070d07;
     --clr-accent: #cfefcb;
+
+    /* box shadow */
+    --box-sh: .25em .25em .75em rgba(0,0,0,.25),
+              .125em .125em .25em rgba(0,0,0,.15);
 }
 
 @media (min-width: 800px) {
@@ -96,31 +100,39 @@
  .sectionSubtitle {
     margin: 0;
     font-size: var(--fs-h3);
+    padding: .2em 2em;
  }
 
  .sectionSubtitleIntro {
     background: var(--clr-accent);
     font-family: var(--ff-secondary);
     margin-bottom: 2em;
+    display: inline-block;
 }
 
-/* Header Styles */
+/* Header LAYOUT Styles */
 
 header {
     display: none;
 }
 
-/* Introduction Styles */
+/* Introduction LAYOUT Styles */
 
 .intro {
     position: relative;
+}
+
+.introImg {
+    border-radius: 55px;
+    box-shadow: var(--box-sh);
 }
 
 @media (min-width: 600px) {
     
     .introImg {
         grid-area: img;
-        min-width: 250px;
+        min-width: 300px;
+        z-index: 2;
     }
 
     .intro .sectionTitleIntro {
@@ -142,5 +154,16 @@ header {
         grid-template-columns: min-content max-content;
     }
 
-
+    .intro .sectionSubtitleIntro {
+        align-self: start;
+        grid-column: -1 / 1;
+        grid-row: 2;
+        text-align: end;
+        position: relative;
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+    }
 }
+
+/* About Me & Services LAYOUT */
+
