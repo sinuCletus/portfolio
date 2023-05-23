@@ -4,7 +4,9 @@
     box-sizing: border-box;
 }
 
+/* ---------------- */
 /* custom properties */
+/* ---------------- */
 
 :root {
     /* font families */
@@ -47,6 +49,10 @@
     margin: 0;
     font-family: var(--ff-primary);
     line-height: 1.6;
+ }
+
+ section {
+    padding: 5em 2em;
  }
 
  img {
@@ -95,4 +101,46 @@
  .sectionSubtitleIntro {
     background: var(--clr-accent);
     font-family: var(--ff-secondary);
+    margin-bottom: 2em;
+}
+
+/* Header Styles */
+
+header {
+    display: none;
+}
+
+/* Introduction Styles */
+
+.intro {
+    position: relative;
+}
+
+@media (min-width: 600px) {
+    
+    .introImg {
+        grid-area: img;
+        min-width: 250px;
+    }
+
+    .intro .sectionTitleIntro {
+        grid-area: title;
+    }
+
+    .intro .sectionSubtitleIntro {
+        grid-area: subtitle;
+    }
+
+    .intro {
+        margin: 0 auto;
+        width: min-content;
+        display: grid;
+        column-gap: 1em;
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+
+
 }
