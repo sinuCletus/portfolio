@@ -23,10 +23,21 @@
     --fs-h3: 1.25rem;
     --fs-body: 1rem;
 
+    /* border radius */
+    --brd-rad: 5px;
     /* colors */
-    --clr-light: #fff;
+    --clr-light: rgb(255, 255, 255);
     --clr-dark: #070d07;
-    --clr-accent: #cfefcb;
+    --clr-accent: rgb(207, 239, 203);
+    --clr-accent2: #cfefcbc3;
+    --gradient: linear-gradient(
+        90deg, 
+        rgba(0,154,255,0.5010737571395746) 0%, 
+        rgba(0, 255, 123, 0.5) 100%);
+    --gradient-2: linear-gradient(
+        45deg, 
+        rgba(207,239,203) 0%, 
+        rgba(255,255,255) 100%);
 
     /* box shadow */
     --box-sh: .25em .25em .75em rgba(0,0,0,.25),
@@ -56,7 +67,7 @@
  }
 
  section {
-    padding: 5em 2em;
+    padding: 4em 2em;
  }
 
  img {
@@ -108,6 +119,14 @@
     font-family: var(--ff-secondary);
     margin-bottom: 2em;
     display: inline-block;
+    background-image: var(--gradient);
+    background-size: 400%;
+    animation: bg-animation 10s infinite alternate;
+}
+
+@keyframes bg-animation {
+    0% {background-position: left;}
+    100% {background-position: right;}
 }
 
 /* Header LAYOUT Styles */
@@ -141,12 +160,13 @@ header {
 
     .intro .sectionSubtitleIntro {
         grid-area: subtitle;
+        display: inline-block;
     }
 
     .intro {
+        display: grid;
         margin: 0 auto;
         width: min-content;
-        display: grid;
         column-gap: 1em;
         grid-template-areas: 
             "img title"
@@ -158,7 +178,7 @@ header {
         align-self: start;
         grid-column: -1 / 1;
         grid-row: 2;
-        text-align: end;
+        text-align: right;
         position: relative;
         left: -1.5em;
         width: calc(100% + 1.5em);
@@ -167,3 +187,105 @@ header {
 
 /* About Me & Services LAYOUT */
 
+.aboutMe {
+    background-color: var(--clr-accent);
+    background-image: url(images/pineneedles.jpg);
+    background-size: cover;
+    background-blend-mode: luminosity;
+    color: var(--clr-light);
+    text-align: center;
+    pointer-events: none;
+
+}
+
+.sectionTitleServices {
+    color: var(--clr-accent);
+}
+
+/* little desgin elements above and below service title */
+
+.sectionTitleServices::after,
+.sectionTitleServices::before {
+    content: '';
+    width: 3em;
+    background-color: currentColor;
+    height: 1px;
+    display: block;
+    margin: .5em auto;
+    opacity: .35;
+}
+
+.serviceItem {
+    border-block: 1px solid transparent;
+    padding-block: 1em;
+    pointer-events: auto;
+    transition: all 500ms;
+}
+
+
+/* 2 pointer events above plus this code below
+    creates the highlight hovered element
+     and dim siblings effect of the article
+    elements within the services section*/
+.services:hover > * {
+    opacity: .5;
+}
+
+.services:hover > *:hover {
+    opacity: 1;
+}
+/* end of highight and dim effect code */
+
+.serviceItem:hover,
+.serviceItem:focus {
+    background-color: hsl(120, 30%, 4%, .8);
+    color: var(--clr-accent);
+    border-block: 1px solid var(--clr-light);
+    transition: color 500ms ease-in-out, 
+                background-color 400ms ease-in-out,
+                border-block 300ms ease-in-out;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill {
+    color: var(--clr-dark);
+    background: var(--clr-accent2);
+    max-width: fit-content;
+    border: 1px solid var(--clr-accent);
+    border-radius: var(--brd-rad);
+    margin: 1em;
+    padding: .25em .5em;
+}
+
+/* pdf icon style */
+.fa-solid {
+    color: #ffffff;
+    font-size: xx-large;
+}
+
+.fa-solid:hover,
+.fa-solid:focus {
+    color: var(--clr-accent2);
+}
+
+/* media query for service section at larger screens */
+@media (min-width: 800px) {
+    .services {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1000px;
+        justify-content: space-around;
+        margin: 0 auto;
+    }
+
+    .services > article {
+        flex-basis: 45%;
+        margin-inline: .5em;
+    }
+}
