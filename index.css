@@ -157,6 +157,10 @@ header {
     align-self: center;
 }
 
+.logo img {
+    scale: 1.3;
+}
+
 /* NAV toggling styles/effects */
 
 .nav {
