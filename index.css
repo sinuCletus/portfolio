@@ -476,7 +476,7 @@ color: var(--clr-dark);
     width: 100%;
     aspect-ratio: 1;
     object-fit: contain;
-    background-color: hsl(120, 30%, 4%, .8);
+    background-color: hsl(120, 30%, 4%, .75);
 }
 
 .fa-github {
