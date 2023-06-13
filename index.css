@@ -453,6 +453,10 @@ header {
     background-color: var(--clr-light);
 }
 
+.project > * {
+    margin-bottom: .5em;
+}
+
 .projects strong {
 color: var(--clr-dark);
 }
@@ -461,10 +465,18 @@ color: var(--clr-dark);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     margin: 0 auto;
+    gap: 3em;
 }
 
 .project a:nth-child(2) {
     color: darkgreen;
+}
+
+.project-image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+    background-color: hsl(120, 30%, 4%, .8);
 }
 
 .fa-github {
