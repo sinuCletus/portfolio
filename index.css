@@ -136,7 +136,7 @@ html {
     display: inline-block;
     background-image: var(--gradient);
     background-size: 400%;
-    animation: bg-animation 10s infinite alternate;
+    animation: bg-animation 7s infinite alternate;
 }
 
 @keyframes bg-animation {
@@ -500,6 +500,19 @@ color: var(--clr-dark);
     margin-top: .5em;
     margin-inline: .25em;
 }
+
+.view:hover {
+    opacity: .8;
+    animation: wiggle 1s;
+}
+
+@keyframes wiggle {
+    0% {transform: rotate(10deg);}
+    25% {transform: rotate(-10deg);}
+    50% {transform: rotate(15deg);}
+    75% {transform: rotate(-5deg);}
+    100% {transform: rotate(0deg);}
+  }
 
 .project a:nth-child(2):hover .fa-github{
     color: var(--clr-dark);
